@@ -23,24 +23,31 @@ document.addEventListener("click", (click) => {
         // Store dockId in a variable to compare with allHaulers.dockId
         const dockId = parseInt(itemClicked.dataset.dockid);
 
+        // Find the info about the dock using the .find method to find the dock that shares an id with the dock that was clicked
         const dockInfo = docks.find(dock => dock.id === dockId);
 
+        // Create an empty array to store hauler names in
         const haulerName = [];
 
+        // Iterate through allHaulers to find which haulers are serviced by the dock that was clicked by comparing their dock ids
         for (const hauler of allHaulers) {
             if (hauler.dockId === dockId) {
+                // Push the name to the haulerName array because it is serviced by the dock that was clicked
                 haulerName.push(hauler.name);
             }
         }
 
+        // If no haulers are serviced by this dock (no names in the haulerName array), display the message below
         if (haulerName.length === 0) {
             window.alert(`The ${dockInfo.location} dock is currently unloading nothing`);
         }
+        // If one hauler is serviced by this dock, display the message below
         else if (haulerName.length === 1) {
-            window.alert(`The ${dockInfo.location} dock is currently unloading ${haulerName[0]}`)
+            window.alert(`The ${dockInfo.location} dock is currently unloading ${haulerName[0]}`);
         }
+        // If two haulers are serviced by this dock, display the below message
         else {
-            window.alert(`The ${dockInfo.location} dock is currently unloading ${haulerName[0]}, ${haulerName[1]}`)
+            window.alert(`The ${dockInfo.location} dock is currently unloading ${haulerName[0]}, ${haulerName[1]}`);
         }    
     }
 })
