@@ -1,0 +1,23 @@
+body {
+    background-color: #89CFF0;
+    padding: 1em;
+}
+
+.block {
+    margin: 4em 1em 4em 1em;
+    border: dotted white 0.1em;
+    padding: 1em;
+}
+
+li {
+    background-color: white;
+    height: 30px;
+    margin: 1em;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: large;
+}
+
+ul {
+    list-style-type: none;
+}
